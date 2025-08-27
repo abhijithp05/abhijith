@@ -1,48 +1,33 @@
-import styled from 'styled-components';
+import React from "react";
 
-export const MainContainer = styled.div`
-  min-height: 100vh;
-`;
+export const MainContainer = ({ children }) => (
+  <div className="min-h-screen flex">{children}</div>
+);
 
-export const MainContentContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  overflow-y: hidden;
-`;
+export const MainContentContainer = ({ children }) => (
+  <div className="flex flex-col w-full h-screen overflow-y-hidden">
+    {children}
+  </div>
+);
 
-export const SideNavContainer = styled.div`
-  background-color: white;
-  width: 16rem;
-  padding: 1.25rem 2.5rem 2.5rem 2.25rem;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  border-right-width: thin;
-  @media (min-width: 1024px) {
-    display: block;
-  }
-  @media (max-width: 1024px) {
-    margin-top: 110px;
-    width: 100%;
-  }
-`;
+export const MainBodyContainer = ({ children }) => (
+  <main className="mt-[85px] ml-0  bg-[#f2f5f5] flex justify-center w-full overflow-x-hidden">
+    {children}
+  </main>
+);
 
-export const TopNavContainer = styled.header`
-  background-color: white;
-  color: white;
-  width: 83%;
-  padding: 0.25rem;
-  padding-left: 1rem;
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
-    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-  position: fixed;
-  z-index: 10;
-  top: 0;
-  left: 16rem;
-  @media (max-width: 768px) {
-    width: 100%;
-    left: 0;
-  }
-`;
+export const SideNavContainer = ({ isSideBarVisible, children }) => (
+  <div
+    className={`${
+      isSideBarVisible ? "flex" : "hidden"
+    } lg:flex bg-white lg:w-[14rem] lg:mt-0 p-4 h-[90%] lg:h-screen fixed lg:top-0 top-24 left-0 border-r border-gray-200 w-full sm:mt-[110px] z-20`}
+  >
+    {children}
+  </div>
+);
+
+export const TopNavContainer = ({ children }) => (
+  <header className="bg-white text-white h-[85px] border-b border-gray-200 flex items-center p-1 pl-4 shadow-md fixed z-10 top-0 w-full left-0">
+    {children}
+  </header>
+);

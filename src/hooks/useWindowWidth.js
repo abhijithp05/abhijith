@@ -1,17 +1,21 @@
+'use client';
 import { useState, useEffect } from 'react';
 
 const useWindowWidth = () => {
   // State to store the window width
-  const [width, setWidth] = useState(0); // Start with 0 until client-side mount
+  const [width, setWidth] = useState(0);
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    // Ensure window is defined (i.e., we are in the browser)
-    if (typeof window !== 'undefined') {
-      const handleResize = () => {
-        setWidth(window.innerWidth);
-      };
+    // Check if we're on the client side
+    setIsClient(true); // This ensures the hook is only run client-side
 
-      // Set the initial width
+    const handleResize = () => {
+      setWidth(window.innerWidth);
+    };
+
+    if (isClient) {
+      // Set initial window width when the component mounts
       handleResize();
 
       // Add event listener for resize
@@ -22,7 +26,7 @@ const useWindowWidth = () => {
         window.removeEventListener('resize', handleResize);
       };
     }
-  }, []); // Empty dependency array to only run on mount/unmount
+  }, [isClient]); // Ensure effect runs when component is client-side
 
   return width;
 };

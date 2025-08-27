@@ -1,8 +1,3 @@
-import {
-  cardDetails,
-  quickTransferUsers,
-  transactions,
-} from '@/constants/mockData';
 import useWindowWidth from '@/hooks/useWindowWidth';
 import React, { createContext, useState, useContext } from 'react';
 
@@ -13,11 +8,15 @@ const AppContext = createContext();
 export const AppContextProvider = ({ children }) => {
   const windowWidth = useWindowWidth();
   const [appContext, setAppContext] = useState({
-    pageName: 'Overview',
+    pageName: 'Employees',
     isSideBarVisible: windowWidth >= 1024,
-    cardDetails,
-    transactions,
-    quickTransferUsers,
+    accountInfo: {
+      userName: 'John Doe',
+      email: 'johndoe@asure.pro',
+    },
+    topNav: {
+      showAddEmployee: false,
+    },
   });
 
   const setApplicationContext = (newContext) => {
