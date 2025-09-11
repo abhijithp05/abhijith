@@ -11,7 +11,7 @@ export function Skills() {
         { name: "JavaScript ES6+", level: 95 },
         { name: "HTML5/CSS3", level: 95 },
         { name: "Tailwind CSS", level: 90 },
-      ]
+      ],
     },
     {
       title: "Tools & Frameworks",
@@ -21,18 +21,12 @@ export function Skills() {
         { name: "Jest/Testing Library", level: 80 },
         { name: "Figma/Design Systems", level: 85 },
         { name: "Performance Optimization", level: 90 },
-      ]
+      ],
     },
     {
-      title: "Backend & DevOps",
-      skills: [
-        { name: "Node.js", level: 75 },
-        { name: "REST APIs", level: 85 },
-        { name: "GraphQL", level: 70 },
-        { name: "Docker", level: 65 },
-        { name: "AWS/Vercel", level: 80 },
-      ]
-    }
+      title: "DevOps",
+      skills: [{ name: "Vercel", level: 10 }],
+    },
   ];
 
   return (
@@ -48,15 +42,18 @@ export function Skills() {
               A comprehensive toolkit of modern technologies and best practices
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {skillCategories.map((category, index) => (
-              <Card key={index} className="bg-card-gradient shadow-card hover:shadow-elegant transition-smooth border-border/50">
+              <Card
+                key={index}
+                className="bg-card-gradient shadow-card hover:shadow-elegant transition-smooth border-border/50"
+              >
                 <CardContent className="p-6">
                   <h3 className="text-xl font-semibold text-card-foreground mb-6 text-center">
                     {category.title}
                   </h3>
-                  
+
                   <div className="space-y-4">
                     {category.skills.map((skill, skillIndex) => (
                       <div key={skillIndex} className="space-y-2">
@@ -68,10 +65,7 @@ export function Skills() {
                             {skill.level}%
                           </span>
                         </div>
-                        <Progress 
-                          value={skill.level} 
-                          className="h-2"
-                        />
+                        <Progress value={skill.level} className="h-2" />
                       </div>
                     ))}
                   </div>

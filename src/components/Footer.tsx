@@ -1,9 +1,18 @@
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Mail, Heart } from "lucide-react";
+import {
+  discussNewOpportunityLabel,
+  emailId,
+  footerLabel,
+  getInTouchLabel,
+  letsConnectLabel,
+  location,
+  navItems,
+  phoneNumber,
+  quickLinksLabel,
+} from "@/constants/navigation.const";
+import { Github, Linkedin, Mail } from "lucide-react";
 
 export function Footer() {
-  const currentYear = new Date().getFullYear();
-
   return (
     <footer className="bg-card border-t border-border/50 py-12">
       <div className="container mx-auto px-6">
@@ -11,75 +20,84 @@ export function Footer() {
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
               <h3 className="text-xl font-bold text-foreground mb-4">
-                Let's Connect
+                {letsConnectLabel}
               </h3>
               <p className="text-muted-foreground mb-4">
-                Always open to discussing new opportunities and exciting projects.
+                {discussNewOpportunityLabel}
               </p>
               <div className="flex gap-4">
-                <Button variant="ghost" size="icon" className="hover:text-primary">
-                  <Github className="h-5 w-5" />
+                <Button
+                  asChild
+                  variant="ghost"
+                  size="icon"
+                  className="hover:scale-110 transition-transform hover:shadow-glow"
+                >
+                  <a
+                    href="https://github.com/abhijithp05"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Github className="h-5 w-5" />
+                  </a>
                 </Button>
-                <Button variant="ghost" size="icon" className="hover:text-primary">
-                  <Linkedin className="h-5 w-5" />
+                <Button
+                  asChild
+                  variant="ghost"
+                  size="icon"
+                  className="hover:scale-110 transition-transform hover:shadow-glow"
+                >
+                  <a
+                    href="https://www.linkedin.com/in/abhijith-pillai/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Linkedin className="h-5 w-5" />
+                  </a>
                 </Button>
-                <Button variant="ghost" size="icon" className="hover:text-primary">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="hover:scale-110 transition-transform hover:shadow-glow"
+                >
                   <Mail className="h-5 w-5" />
                 </Button>
               </div>
             </div>
-            
+
             <div>
               <h3 className="text-xl font-bold text-foreground mb-4">
-                Quick Links
+                {quickLinksLabel}
               </h3>
               <div className="space-y-2">
-                <button 
-                  onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}
-                  className="block text-muted-foreground hover:text-foreground transition-smooth"
-                >
-                  About
-                </button>
-                <button 
-                  onClick={() => document.getElementById("experience")?.scrollIntoView({ behavior: "smooth" })}
-                  className="block text-muted-foreground hover:text-foreground transition-smooth"
-                >
-                  Experience
-                </button>
-                <button 
-                  onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
-                  className="block text-muted-foreground hover:text-foreground transition-smooth"
-                >
-                  Projects
-                </button>
-                <button 
-                  onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
-                  className="block text-muted-foreground hover:text-foreground transition-smooth"
-                >
-                  Contact
-                </button>
+                {navItems?.map((item) => (
+                  <button
+                    onClick={() =>
+                      document
+                        .getElementById(item.id)
+                        ?.scrollIntoView({ behavior: "smooth" })
+                    }
+                    className="block text-muted-foreground hover:text-foreground transition-smooth"
+                  >
+                    {item.label}
+                  </button>
+                ))}
               </div>
             </div>
-            
+
             <div>
               <h3 className="text-xl font-bold text-foreground mb-4">
-                Get in Touch
+                {getInTouchLabel}
               </h3>
               <div className="space-y-2 text-muted-foreground">
-                <p>john.doe@example.com</p>
-                <p>+1 (555) 123-4567</p>
-                <p>San Francisco, CA</p>
+                <p>{emailId}</p>
+                <p>{phoneNumber}</p>
+                <p>{location}</p>
               </div>
             </div>
           </div>
-          
+
           <div className="border-t border-border/50 pt-8 text-center">
-            <p className="text-muted-foreground flex items-center justify-center gap-2">
-              Made with <Heart className="h-4 w-4 text-red-500 fill-current" /> by Senior Frontend Developer
-            </p>
-            <p className="text-sm text-muted-foreground mt-2">
-              © {currentYear} All rights reserved.
-            </p>
+            <p className="text-sm text-muted-foreground mt-2">{footerLabel}</p>
           </div>
         </div>
       </div>

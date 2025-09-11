@@ -6,43 +6,77 @@ export function Experience() {
   const experiences = [
     {
       title: "Senior Frontend Developer",
-      company: "Tech Innovation Corp",
-      location: "San Francisco, CA",
-      period: "2022 - Present",
+      company: "Sunbelt Rentals / Publicis Sapient",
+      location: "India",
+      period: "January 2023 – Till Date",
       description: [
-        "Led a team of 5 developers in building a complex dashboard application using React and TypeScript",
-        "Improved application performance by 40% through code splitting and optimization techniques",
-        "Implemented comprehensive testing strategies resulting in 95% code coverage",
-        "Mentored junior developers and established coding standards and best practices"
+        "Involved in various design discussions with the Architects.",
+        "Understanding requirements & estimating the time to create an efficient solution.",
+        "Creating new reusable components and separate UI repo which could be used in a variety of applications.",
+        "Creating responsive pages for web applications which could be viewed properly on desktops as well as tablets.",
+        "Writing Unit tests.",
       ],
-      technologies: ["React", "TypeScript", "Next.js", "Tailwind CSS", "GraphQL"]
+      technologies: [
+        "JavaScript",
+        "React JS",
+        "TypeScript",
+        "NextJS",
+        "Redux",
+        "Jest",
+        "HTML5",
+        "CSS3",
+        "Jenkins",
+      ],
     },
     {
       title: "Frontend Developer",
-      company: "Digital Solutions Ltd",
-      location: "New York, NY",
-      period: "2020 - 2022",
+      company: "Financial Services (FS) / Bukuwarung",
+      location: "India",
+      period: "April 2022 – Nov 2022",
       description: [
-        "Developed responsive web applications for clients in e-commerce and fintech sectors",
-        "Collaborated with UX/UI designers to create pixel-perfect implementations",
-        "Integrated third-party APIs and payment gateways",
-        "Optimized applications for mobile devices and cross-browser compatibility"
+        "Involved in various design discussions with the Architects.",
+        "Understanding requirements & estimating the time to create an efficient solution.",
+        "Creating UI components on the customer end and business partner end.",
+        "Logging the events for each page direction, screen landing, and error pages to identify the traffic of the user and improving business by analyzing the logs with help of Amplitude, Clevertap, and DataDogs.",
+        "Minimizing the bundle size and optimizing the code by shifting the commonly used React components into a separate UI repo.",
       ],
-      technologies: ["React", "JavaScript", "SCSS", "RESTful APIs", "Redux"]
+      technologies: [
+        "JavaScript",
+        "React JS",
+        "NextJS",
+        "Redux",
+        "TypeScript",
+        "HTML5",
+        "CSS3",
+        "Jenkins",
+        "Amplitude",
+        "CleverTap",
+        "DataDogs",
+      ],
     },
     {
-      title: "Junior Frontend Developer",
-      company: "StartupXYZ",
-      location: "Remote",
-      period: "2019 - 2020",
+      title: "Frontend Developer",
+      company: "Mitchell Connect Estimating (MCE) / Mitchell (USA)",
+      location: "India",
+      period: "October 2017 – April 2022",
       description: [
-        "Built interactive user interfaces using React and modern JavaScript",
-        "Worked closely with backend developers to integrate APIs",
-        "Participated in agile development processes and code reviews",
-        "Contributed to the company's design system and component library"
+        "Involved in various design discussions with the Architects.",
+        "Understanding requirements & estimating the time to create an efficient solution.",
+        "Creating UI components on the customer end and business partner end.",
       ],
-      technologies: ["React", "JavaScript", "CSS3", "Git", "Figma"]
-    }
+      technologies: [
+        "JavaScript",
+        "React JS",
+        "TypeScript",
+        "Gulp",
+        "Webpack",
+        "Visual Studio 2017",
+        "Jest",
+        "HTML5",
+        "CSS3",
+        "Jenkins",
+      ],
+    },
   ];
 
   return (
@@ -58,10 +92,13 @@ export function Experience() {
               My professional journey in frontend development
             </p>
           </div>
-          
+
           <div className="space-y-8">
             {experiences.map((exp, index) => (
-              <Card key={index} className="bg-card-gradient shadow-card hover:shadow-elegant transition-smooth border-border/50">
+              <Card
+                key={index}
+                className="bg-card-gradient shadow-card hover:shadow-elegant transition-smooth border-border/50"
+              >
                 <CardContent className="p-8">
                   <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-4">
                     <div className="mb-4 lg:mb-0">
@@ -72,7 +109,7 @@ export function Experience() {
                         {exp.company}
                       </h4>
                     </div>
-                    
+
                     <div className="flex flex-col sm:flex-row gap-4 text-sm text-muted-foreground">
                       <div className="flex items-center gap-2">
                         <CalendarDays className="h-4 w-4" />
@@ -84,19 +121,26 @@ export function Experience() {
                       </div>
                     </div>
                   </div>
-                  
+
                   <ul className="space-y-2 mb-6">
                     {exp.description.map((item, itemIndex) => (
-                      <li key={itemIndex} className="text-muted-foreground flex items-start">
+                      <li
+                        key={itemIndex}
+                        className="text-muted-foreground flex items-start"
+                      >
                         <span className="text-primary mr-2 mt-2">•</span>
                         {item}
                       </li>
                     ))}
                   </ul>
-                  
+
                   <div className="flex flex-wrap gap-2">
                     {exp.technologies.map((tech, techIndex) => (
-                      <Badge key={techIndex} variant="secondary" className="px-3 py-1">
+                      <Badge
+                        key={techIndex}
+                        variant="secondary"
+                        className="px-3 py-1"
+                      >
                         {tech}
                       </Badge>
                     ))}

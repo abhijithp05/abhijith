@@ -6,6 +6,23 @@ import { Label } from "@/components/ui/label";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import {
+  contactLeftSectionHeading,
+  contactLeftSectionSubheading,
+  contactSubheading,
+  emailId,
+  emailLabel,
+  getInTouchLabel,
+  location,
+  locationLabel,
+  messageLabel,
+  nameLabel,
+  phoneLabel,
+  phoneNumber,
+  sendingText,
+  sendMessageText,
+  subjectLabel,
+} from "@/constants/navigation.const";
 
 export function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -14,15 +31,15 @@ export function Contact() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
     toast({
       title: "Message sent!",
       description: "Thank you for your message. I'll get back to you soon.",
     });
-    
+
     setIsSubmitting(false);
     (e.target as HTMLFormElement).reset();
   };
@@ -33,117 +50,122 @@ export function Contact() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Get In Touch
+              {getInTouchLabel}
             </h2>
             <div className="w-24 h-1 bg-primary mx-auto mb-8"></div>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Let's discuss your next project or potential collaboration opportunities
+              {contactSubheading}
             </p>
           </div>
-          
+
           <div className="grid lg:grid-cols-2 gap-12">
             <div>
               <h3 className="text-2xl font-bold text-foreground mb-6">
-                Let's Start a Conversation
+                {contactLeftSectionHeading}
               </h3>
-              
+
               <p className="text-muted-foreground mb-8 leading-relaxed">
-                I'm always interested in hearing about new opportunities, 
-                whether that's a full-time role, freelance project, or just a chat about frontend development.
+                {contactLeftSectionSubheading}
               </p>
-              
+
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-skill-gradient rounded-lg flex items-center justify-center">
                     <Mail className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-foreground">Email</h4>
-                    <p className="text-muted-foreground">john.doe@example.com</p>
+                    <h4 className="font-semibold text-foreground">
+                      {emailLabel}
+                    </h4>
+                    <p className="text-muted-foreground">{emailId}</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-skill-gradient rounded-lg flex items-center justify-center">
                     <Phone className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-foreground">Phone</h4>
-                    <p className="text-muted-foreground">+1 (555) 123-4567</p>
+                    <h4 className="font-semibold text-foreground">
+                      {phoneLabel}
+                    </h4>
+                    <p className="text-muted-foreground">{phoneNumber}</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-skill-gradient rounded-lg flex items-center justify-center">
                     <MapPin className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-foreground">Location</h4>
-                    <p className="text-muted-foreground">San Francisco, CA</p>
+                    <h4 className="font-semibold text-foreground">
+                      {locationLabel}
+                    </h4>
+                    <p className="text-muted-foreground">{location}</p>
                   </div>
                 </div>
               </div>
             </div>
-            
+
             <Card className="bg-card-gradient shadow-card border-border/50">
               <CardContent className="p-8">
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <Label htmlFor="name">Name</Label>
-                      <Input 
-                        id="name" 
-                        placeholder="Your name" 
-                        required 
+                      <Label htmlFor="name">{nameLabel}</Label>
+                      <Input
+                        id="name"
+                        placeholder="Your name"
+                        required
                         className="border-border/50"
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="email">Email</Label>
-                      <Input 
-                        id="email" 
-                        type="email" 
-                        placeholder="your.email@example.com" 
-                        required 
+                      <Label htmlFor="email">{emailLabel}</Label>
+                      <Input
+                        id="email"
+                        type="email"
+                        placeholder="your.email@example.com"
+                        required
                         className="border-border/50"
                       />
                     </div>
                   </div>
-                  
+
                   <div className="space-y-2">
-                    <Label htmlFor="subject">Subject</Label>
-                    <Input 
-                      id="subject" 
-                      placeholder="Project inquiry, collaboration, etc." 
-                      required 
+                    <Label htmlFor="subject">{subjectLabel}</Label>
+                    <Input
+                      id="subject"
+                      placeholder="Project inquiry, collaboration, etc."
+                      required
                       className="border-border/50"
                     />
                   </div>
-                  
+
                   <div className="space-y-2">
-                    <Label htmlFor="message">Message</Label>
-                    <Textarea 
-                      id="message" 
-                      placeholder="Tell me about your project or idea..." 
-                      required 
+                    <Label htmlFor="message">{messageLabel}</Label>
+                    <Textarea
+                      id="message"
+                      placeholder="Tell me about your project or idea..."
+                      required
                       rows={6}
                       className="border-border/50 resize-none"
                     />
                   </div>
-                  
-                  <Button 
-                    type="submit" 
-                    className="w-full" 
+
+                  <Button
+                    type="submit"
+                    className="w-full"
                     variant="hero"
                     size="lg"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? (
-                      "Sending..."
+                      sendingText
                     ) : (
                       <>
                         <Send className="h-5 w-5" />
-                        Send Message
+                        {sendMessageText}
                       </>
                     )}
                   </Button>

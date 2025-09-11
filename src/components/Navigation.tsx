@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { navigationTitle, navItems } from "@/constants/navigation.const";
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -20,29 +21,21 @@ export function Navigation() {
     setIsMobileMenuOpen(false);
   };
 
-  const navItems = [
-    { label: "About", id: "about" },
-    { label: "Skills", id: "skills" },
-    { label: "Experience", id: "experience" },
-    { label: "Projects", id: "projects" },
-    { label: "Contact", id: "contact" },
-  ];
-
   return (
-    <nav 
+    <nav
       className={`fixed top-0 left-0 right-0 z-40 transition-smooth ${
-        isScrolled 
-          ? "bg-background/80 backdrop-blur-md shadow-elegant" 
+        isScrolled
+          ? "bg-background/80 backdrop-blur-md shadow-elegant"
           : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-6">
-        <div className="flex items-center justify-between h-16">
-          <button 
+        <div className="flex items-center justify-between h-16 mr-10">
+          <button
             onClick={() => scrollToSection("hero")}
             className="text-xl font-bold text-foreground hover:text-primary transition-smooth"
           >
-            Portfolio
+            {navigationTitle}
           </button>
 
           {/* Desktop Navigation */}
