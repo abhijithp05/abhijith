@@ -24,7 +24,7 @@ import {
   subjectLabel,
 } from "@/constants/navigation.const";
 
-export function Contact() {
+export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 

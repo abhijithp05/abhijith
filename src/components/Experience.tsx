@@ -2,7 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CalendarDays, MapPin } from "lucide-react";
 
-export function Experience() {
+export default function Experience() {
   const experiences = [
     {
       title: "Senior Frontend Developer",

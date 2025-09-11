@@ -1,7 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 
-export function Skills() {
+export default function Skills() {
   const skillCategories = [
     {
       title: "Frontend Technologies",

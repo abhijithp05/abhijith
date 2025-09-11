@@ -2,7 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Code2, Lightbulb, Users, Zap } from "lucide-react";
 
-export function About() {
+export default function About() {
   const highlights = [
     {
       icon: Code2,

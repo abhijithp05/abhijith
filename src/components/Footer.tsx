@@ -12,7 +12,7 @@ import {
 } from "@/constants/navigation.const";
 import { Github, Linkedin, Mail } from "lucide-react";
 
-export function Footer() {
+export default function Footer() {
   return (
     <footer className="bg-card border-t border-border/50 py-12">
       <div className="container mx-auto px-6">
