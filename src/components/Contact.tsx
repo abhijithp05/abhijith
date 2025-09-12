@@ -6,6 +6,8 @@ import { Label } from "@/components/ui/label";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from "emailjs-com";
+
 import {
   contactLeftSectionHeading,
   contactLeftSectionSubheading,
@@ -25,23 +27,44 @@ import {
 } from "@/constants/navigation.const";
 
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
+  const [successMessage, setSuccessMessage] = useState("");
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-
-    toast({
-      title: "Message sent!",
-      description: "Thank you for your message. I'll get back to you soon.",
-    });
-
-    setIsSubmitting(false);
-    (e.target as HTMLFormElement).reset();
+    try {
+      await emailjs.send(
+        "service_eedskgf",
+        "template_knxp7ye",
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          // subject: formData.subject,
+        },
+        "lWG0pjY7xf7OGgqW-" // Replace with your EmailJS Public Key
+      );
+      setSuccessMessage("Your message has been sent successfully!");
+      setFormData({ name: "", email: "", message: "" });
+    } catch (error) {
+      console.error("Failed to send email:", error);
+      setSuccessMessage("Failed to send your message. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -115,16 +138,23 @@ export default function Contact() {
                       <Label htmlFor="name">{nameLabel}</Label>
                       <Input
                         id="name"
+                        name="name"
+                        type="text"
                         placeholder="Your name"
                         required
                         className="border-border/50"
+                        value={formData.name}
+                        onChange={handleChange}
                       />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="email">{emailLabel}</Label>
                       <Input
-                        id="email"
                         type="email"
+                        id="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
                         placeholder="your.email@example.com"
                         required
                         className="border-border/50"
@@ -136,6 +166,9 @@ export default function Contact() {
                     <Label htmlFor="subject">{subjectLabel}</Label>
                     <Input
                       id="subject"
+                      name="message"
+                      value={formData.subject}
+                      onChange={handleChange}
                       placeholder="Project inquiry, collaboration, etc."
                       required
                       className="border-border/50"
@@ -146,6 +179,9 @@ export default function Contact() {
                     <Label htmlFor="message">{messageLabel}</Label>
                     <Textarea
                       id="message"
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
                       placeholder="Tell me about your project or idea..."
                       required
                       rows={6}

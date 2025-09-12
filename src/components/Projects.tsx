@@ -7,9 +7,9 @@ import { Coach, SunbeltRentals, Mitchell, Portfolio } from "@/assets";
 export default function Projects() {
   const projects = [
     {
-      title: "E-Commerce Platform",
+      title: "Coach",
       description:
-        "A full-featured e-commerce platform built with Next.js and Stripe integration. Features include product catalog, shopping cart, user authentication, and admin dashboard.",
+        "A full-featured e-commerce platform built with Next.js and React JS. Features include product catalog, shopping cart, user authentication and checkout pages",
       image: Coach,
       technologies: [
         "Next.js",
@@ -18,25 +18,26 @@ export default function Projects() {
         "Prisma",
         "Tailwind CSS",
       ],
-      liveUrl: "#",
+      liveUrl: "https://www.coach.com/?moov_rt=mw",
       featured: true,
     },
     {
-      title: "Task Management App",
+      title: "Sunbelt Rentals",
       description:
-        "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
+        "Sunbelt Rentals provides the rental tools and equipment customers need to build and maintain across North America. They provide rental equipment and managed solutions into every market and sector including construction, industrial, energy, infrastructure and events.",
       image: SunbeltRentals,
       technologies: ["React", "TypeScript", "Socket.io", "Node.js", "MongoDB"],
-      liveUrl: "#",
+      liveUrl: "https://www.sunbeltrentals.com/",
       featured: true,
     },
     {
-      title: "Weather Dashboard",
+      title: "Mitchell",
       description:
-        "A responsive weather dashboard with location-based forecasts, interactive maps, and historical weather data visualization.",
+        "Mitchell Connect Estimating is the latest cloud-based solution being developed & maintained by Mitchell. It is responsible for the creation of estimates in case of any damage to an insured vehicle.",
       image: Mitchell,
       technologies: ["React", "D3.js", "Weather API", "Chart.js", "CSS3"],
-      liveUrl: "#",
+      liveUrl:
+        "https://ag.mymitchell.com/enterprise/authorization/m1/login?app=connect",
       featured: false,
     },
     {
@@ -45,7 +46,7 @@ export default function Projects() {
         "A modern portfolio website showcasing responsive design, smooth animations, and optimal performance scores.",
       image: Portfolio,
       technologies: ["React", "Tailwind CSS", "Framer Motion", "Vite"],
-      liveUrl: "#",
+      liveUrl: "https://abhijithpillai.vercel.app/",
       githubUrl: "https://github.com/abhijithp05/abhijith",
       featured: false,
     },
@@ -118,16 +119,18 @@ export default function Projects() {
                         Live Demo
                       </a>
                     </Button>
-                    <Button variant="outline" size="sm" asChild>
-                      <a
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <Github className="h-4 w-4" />
-                        Code
-                      </a>
-                    </Button>
+                    {project.githubUrl && (
+                      <Button variant="outline" size="sm" asChild>
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <Github className="h-4 w-4" />
+                          Code
+                        </a>
+                      </Button>
+                    )}
                   </div>
                 </CardContent>
               </Card>

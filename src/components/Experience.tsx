@@ -126,9 +126,9 @@ export default function Experience() {
                     {exp.description.map((item, itemIndex) => (
                       <li
                         key={itemIndex}
-                        className="text-muted-foreground flex items-start"
+                        className="text-muted-foreground flex items-start mt-2"
                       >
-                        <span className="text-primary mr-2 mt-2">•</span>
+                        <span className="text-primary mr-2">•</span>
                         {item}
                       </li>
                     ))}

@@ -129,10 +129,7 @@ export function Hero() {
                 size="icon"
                 className="hover:scale-110 transition-transform hover:shadow-glow"
               >
-                <a
-                  href="mailto:abhijithp05@gmail.com?subject=Portfolio%20Inquiry&body=Hello%20Abhijith,"
-                  // className="px-4 py-2 bg-blue-600 text-white rounded-lg"
-                >
+                <a href="mailto:abhijithp05@gmail.com?subject=Portfolio%20Inquiry&body=Hello%20Abhijith,">
                   <Mail className="h-5 w-5" />
                 </a>
               </Button>

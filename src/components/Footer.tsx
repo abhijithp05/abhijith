@@ -22,9 +22,6 @@ export default function Footer() {
               <h3 className="text-xl font-bold text-foreground mb-4">
                 {letsConnectLabel}
               </h3>
-              <p className="text-muted-foreground mb-4">
-                {discussNewOpportunityLabel}
-              </p>
               <div className="flex gap-4">
                 <Button
                   asChild
@@ -59,7 +56,9 @@ export default function Footer() {
                   size="icon"
                   className="hover:scale-110 transition-transform hover:shadow-glow"
                 >
-                  <Mail className="h-5 w-5" />
+                  <a href="mailto:abhijithp05@gmail.com?subject=Portfolio%20Inquiry&body=Hello%20Abhijith,">
+                    <Mail className="h-5 w-5" />
+                  </a>
                 </Button>
               </div>
             </div>
