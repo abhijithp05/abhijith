@@ -29,7 +29,7 @@ export function ThemeToggle() {
     return null;
   }
 
-  const currentTheme = themes.find((t) => t.name === theme) || themes[0];
+  const currentTheme = themes.find((t) => t.name === theme) || themes[1];
   const CurrentIcon = currentTheme.icon;
 
   const themeHandler = (themeName) => {
