@@ -24,7 +24,7 @@ export function Navigation() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-40 transition-smooth ${
-        isScrolled
+        isScrolled || isMobileMenuOpen
           ? "bg-background/80 backdrop-blur-md shadow-elegant"
           : "bg-transparent"
       }`}
@@ -61,6 +61,8 @@ export function Navigation() {
             size="icon"
             className="md:hidden"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="toggle-menu"
+            title="toggle-menu"
           >
             {isMobileMenuOpen ? (
               <X className="h-5 w-5" />

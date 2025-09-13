@@ -2,7 +2,15 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github } from "lucide-react";
-import { Coach, SunbeltRentals, Mitchell, Portfolio } from "@/assets";
+import {
+  Coach,
+  SunbeltRentals,
+  Mitchell,
+  Portfolio,
+  Furlenco,
+  Keurig,
+  Bukuwarung,
+} from "@/assets";
 
 export default function Projects() {
   const projects = [
@@ -13,20 +21,83 @@ export default function Projects() {
       image: Coach,
       technologies: [
         "Next.js",
+        "React",
+        "Redux Toolkit",
+        "Jest",
+        "React Testing Library",
         "TypeScript",
-        "Stripe",
-        "Prisma",
         "Tailwind CSS",
+        "Vercel",
+        "SFCC",
       ],
       liveUrl: "https://www.coach.com/?moov_rt=mw",
       featured: true,
+    },
+    {
+      title: "Furlenco",
+      description:
+        "A furnitue rental platform based out of India built with Next.js and TypeScript",
+      image: Furlenco,
+      technologies: [
+        "Next.js",
+        "React Query",
+        "React",
+        "Redux Toolkit",
+        "Jest",
+        "React Testing Library",
+        "TypeScript",
+        "Tailwind CSS",
+      ],
+      liveUrl: "https://www.furlenco.com/unlmtd",
+      featured: true,
+    },
+    {
+      title: "Bukuwarung",
+      description:
+        "Bukuwarung is a digital platform that empowers small retailers in Indonesia by providing them with access to a wide range of products, competitive pricing, and efficient supply chain management.",
+      image: Bukuwarung,
+      technologies: [
+        "Next.js",
+        "React",
+        "Redux Toolkit",
+        "Jest",
+        "TypeScript",
+        "Tailwind CSS",
+        "Tailwind CSS",
+      ],
+      liveUrl: "https://bukuwarung.com/bukuagen",
+      featured: true,
+    },
+    {
+      title: "Keurig",
+      description:
+        "Keurig is a leading beverage company known for its innovative single-serve coffee makers and a wide variety of coffee pods. The brand is synonymous with convenience, quality, and a personalized coffee experience.",
+      image: Keurig,
+      technologies: [
+        "Next.js",
+        "React",
+        "Redux Toolkit",
+        "Jest",
+        "TypeScript",
+        "Tailwind CSS",
+        "Tailwind CSS",
+      ],
+      liveUrl: "https://keurig.com/",
     },
     {
       title: "Sunbelt Rentals",
       description:
         "Sunbelt Rentals provides the rental tools and equipment customers need to build and maintain across North America. They provide rental equipment and managed solutions into every market and sector including construction, industrial, energy, infrastructure and events.",
       image: SunbeltRentals,
-      technologies: ["React", "TypeScript", "Socket.io", "Node.js", "MongoDB"],
+      technologies: [
+        "Next.js",
+        "React",
+        "Redux Toolkit",
+        "Jest",
+        "TypeScript",
+        "Tailwind CSS",
+        "HighchartsJS",
+      ],
       liveUrl: "https://www.sunbeltrentals.com/",
       featured: true,
     },
@@ -35,7 +106,17 @@ export default function Projects() {
       description:
         "Mitchell Connect Estimating is the latest cloud-based solution being developed & maintained by Mitchell. It is responsible for the creation of estimates in case of any damage to an insured vehicle.",
       image: Mitchell,
-      technologies: ["React", "D3.js", "Weather API", "Chart.js", "CSS3"],
+      technologies: [
+        "Next.js",
+        "React",
+        "Redux Toolkit",
+        "Jest",
+        "TypeScript",
+        "Tailwind CSS",
+        "Enzyme",
+        "HTML5",
+        "CSS3",
+      ],
       liveUrl:
         "https://ag.mymitchell.com/enterprise/authorization/m1/login?app=connect",
       featured: false,
@@ -45,7 +126,15 @@ export default function Projects() {
       description:
         "A modern portfolio website showcasing responsive design, smooth animations, and optimal performance scores.",
       image: Portfolio,
-      technologies: ["React", "Tailwind CSS", "Framer Motion", "Vite"],
+      technologies: [
+        "Next.js",
+        "React",
+        "Redux Toolkit",
+        "Jest",
+        "TypeScript",
+        "Tailwind CSS",
+        "Vite",
+      ],
       liveUrl: "https://abhijithpillai.vercel.app/",
       githubUrl: "https://github.com/abhijithp05/abhijith",
       featured: false,

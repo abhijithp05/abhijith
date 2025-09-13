@@ -18,7 +18,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden pt-4"
     >
       {/* Animated background pattern */}
       <div className="absolute inset-0">
