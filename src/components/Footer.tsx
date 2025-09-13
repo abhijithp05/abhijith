@@ -26,7 +26,7 @@ export default function Footer() {
                   asChild
                   variant="ghost"
                   size="icon"
-                  className="hover:scale-110 transition-transform hover:shadow-glow"
+                  className="hover:scale-110 transition-transform hover:shadow-glow h-12 w-12"
                   aria-label="github"
                   title="github"
                 >
@@ -42,7 +42,7 @@ export default function Footer() {
                   asChild
                   variant="ghost"
                   size="icon"
-                  className="hover:scale-110 transition-transform hover:shadow-glow"
+                  className="hover:scale-110 transition-transform hover:shadow-glow h-12 w-12"
                   aria-label="linkedin"
                   title="linkedin"
                 >
@@ -57,7 +57,7 @@ export default function Footer() {
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="hover:scale-110 transition-transform hover:shadow-glow"
+                  className="hover:scale-110 transition-transform hover:shadow-glow h-12 w-12"
                   aria-label="email"
                   title="email"
                 >

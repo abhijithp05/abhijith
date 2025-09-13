@@ -104,7 +104,7 @@ export function Hero() {
                 asChild
                 variant="ghost"
                 size="icon"
-                className="hover:scale-110 transition-transform hover:shadow-glow"
+                className="hover:scale-110 transition-transform hover:shadow-glow h-12 w-12"
                 aria-label="github"
                 title="github"
               >
@@ -120,7 +120,7 @@ export function Hero() {
                 asChild
                 variant="ghost"
                 size="icon"
-                className="hover:scale-110 transition-transform hover:shadow-glow"
+                className="hover:scale-110 transition-transform hover:shadow-glow h-12 w-12"
                 aria-label="linkedin"
                 title="linkedin"
               >
@@ -135,12 +135,12 @@ export function Hero() {
               <Button
                 variant="ghost"
                 size="icon"
-                className="hover:scale-110 transition-transform hover:shadow-glow"
+                className="hover:scale-110 transition-transform hover:shadow-glow h-12 w-12"
                 aria-label="email"
                 title="email"
               >
                 <a href="mailto:abhijithp05@gmail.com?subject=Portfolio%20Inquiry&body=Hello%20Abhijith,">
-                  <Mail className="h-5 w-5" />
+                  <Mail className="h-5 w-5" alt="Mail me" />
                 </a>
               </Button>
             </div>
