@@ -1,16 +1,14 @@
-import dynamic from "next/dynamic";
+import { Suspense, lazy } from "react";
 import { Navigation } from "@/components/Navigation";
 import { Hero } from "@/components/Hero";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
-const About = dynamic(() => import("@/components/About"), { ssr: false });
-const Contact = dynamic(() => import("@/components/Contact"), { ssr: false });
-const Footer = dynamic(() => import("@/components/Footer"), { ssr: false });
-const Skills = dynamic(() => import("@/components/Skills"), { ssr: false });
-const Experience = dynamic(() => import("@/components/Experience"), {
-  ssr: false,
-});
-const Projects = dynamic(() => import("@/components/Projects"), { ssr: false });
+const About = lazy(() => import("@/components/About"));
+const Contact = lazy(() => import("@/components/Contact"));
+const Footer = lazy(() => import("@/components/Footer"));
+const Skills = lazy(() => import("@/components/Skills"));
+const Experience = lazy(() => import("@/components/Experience"));
+const Projects = lazy(() => import("@/components/Projects"));
 
 const Index = () => {
   return (
@@ -18,12 +16,15 @@ const Index = () => {
       <Navigation />
       <ThemeToggle />
       <Hero />
-      <About />
-      <Skills />
-      <Experience />
-      <Projects />
-      <Contact />
-      <Footer />
+
+      <Suspense fallback={<div className="text-center p-4">Loading...</div>}>
+        <About />
+        <Skills />
+        <Experience />
+        <Projects />
+        <Contact />
+        <Footer />
+      </Suspense>
     </div>
   );
 };

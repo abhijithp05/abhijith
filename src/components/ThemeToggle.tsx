@@ -32,13 +32,24 @@ export function ThemeToggle() {
   const currentTheme = themes.find((t) => t.name === theme) || themes[0];
   const CurrentIcon = currentTheme.icon;
 
+  const themeHandler = (themeName) => {
+    const html = document.documentElement;
+
+    // Remove the old theme class to avoid conflicts
+    html.classList.remove(theme);
+    setTheme(themeName);
+
+    // Add the old theme class
+    html.classList.add(themeName);
+  };
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button
           variant="glass"
           size="icon"
-          className="fixed top-6 right-6 z-50"
+          className="fixed top-3 right-3 z-50"
         >
           <CurrentIcon className="h-[1.2rem] w-[1.2rem] transition-all" />
           <span className="sr-only">Change theme</span>
@@ -50,7 +61,7 @@ export function ThemeToggle() {
           return (
             <DropdownMenuItem
               key={themeOption.name}
-              onClick={() => setTheme(themeOption.name)}
+              onClick={() => themeHandler(themeOption.name)}
               className="cursor-pointer flex items-center gap-2"
             >
               <Icon className="h-4 w-4" />

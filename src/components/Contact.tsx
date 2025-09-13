@@ -5,7 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { useState } from "react";
-import { useToast } from "@/hooks/use-toast";
+import { useToast } from "@/context/ToastContext";
 import emailjs from "emailjs-com";
 
 import {
@@ -27,13 +27,14 @@ import {
 } from "@/constants/navigation.const";
 
 export default function Contact() {
+  const { addToast } = useToast();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    subject: "",
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [successMessage, setSuccessMessage] = useState("");
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -50,18 +51,18 @@ export default function Contact() {
         "service_eedskgf",
         "template_knxp7ye",
         {
-          from_name: formData.name,
-          from_email: formData.email,
-          message: formData.message,
-          // subject: formData.subject,
+          sender_name: formData.name,
+          sender_email: formData.email,
+          sender_message: formData.message,
+          subject: formData.subject,
         },
-        "lWG0pjY7xf7OGgqW-" // Replace with your EmailJS Public Key
+        "lWG0pjY7xf7OGgqW-"
       );
-      setSuccessMessage("Your message has been sent successfully!");
-      setFormData({ name: "", email: "", message: "" });
+      addToast("Your message has been sent successfully!", "success");
+      setFormData({ name: "", email: "", message: "", subject: "" });
     } catch (error) {
       console.error("Failed to send email:", error);
-      setSuccessMessage("Failed to send your message. Please try again later.");
+      addToast("Failed to send your message. Please try again later.", "error");
     } finally {
       setIsSubmitting(false);
     }
@@ -166,7 +167,7 @@ export default function Contact() {
                     <Label htmlFor="subject">{subjectLabel}</Label>
                     <Input
                       id="subject"
-                      name="message"
+                      name="subject"
                       value={formData.subject}
                       onChange={handleChange}
                       placeholder="Project inquiry, collaboration, etc."
