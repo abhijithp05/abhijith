@@ -34,6 +34,8 @@ export function Navigation() {
           <button
             onClick={() => scrollToSection("hero")}
             className="text-xl font-bold text-foreground hover:text-primary transition-smooth"
+            aria-label="home"
+            title="home"
           >
             {navigationTitle}
           </button>
@@ -45,6 +47,8 @@ export function Navigation() {
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
                 className="text-muted-foreground hover:text-foreground transition-smooth"
+                aria-label={item.label}
+                title={item.label}
               >
                 {item.label}
               </button>
@@ -74,6 +78,8 @@ export function Navigation() {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
+                  aria-label={item.label}
+                  title={item.label}
                   className="text-left py-2 text-muted-foreground hover:text-foreground transition-smooth"
                 >
                   {item.label}

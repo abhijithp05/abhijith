@@ -50,6 +50,8 @@ export function ThemeToggle() {
           variant="glass"
           size="icon"
           className="fixed top-3 right-3 z-50"
+          aria-label="Change theme"
+          title="Change theme"
         >
           <CurrentIcon className="h-[1.2rem] w-[1.2rem] transition-all" />
           <span className="sr-only">Change theme</span>

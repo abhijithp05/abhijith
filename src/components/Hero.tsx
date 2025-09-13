@@ -78,6 +78,8 @@ export function Hero() {
                 size="xl"
                 onClick={() => scrollToSection("projects")}
                 className="group shadow-glow"
+                aria-label="view-my-work"
+                title="view-my-work"
               >
                 View My Work
                 <ArrowDown className="h-5 w-5 group-hover:translate-y-1 transition-transform" />
@@ -88,6 +90,8 @@ export function Hero() {
                   href="https://drive.google.com/file/d/1EBklxZsw9pnxZvivkj0EZf7sAfTYzGfk/view?usp=drive_link"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="download-cv"
+                  title="download-cv"
                 >
                   <Download className="h-5 w-5 group-hover:scale-110 transition-transform" />
                   Download CV
@@ -101,6 +105,8 @@ export function Hero() {
                 variant="ghost"
                 size="icon"
                 className="hover:scale-110 transition-transform hover:shadow-glow"
+                aria-label="github"
+                title="github"
               >
                 <a
                   href="https://github.com/abhijithp05"
@@ -115,6 +121,8 @@ export function Hero() {
                 variant="ghost"
                 size="icon"
                 className="hover:scale-110 transition-transform hover:shadow-glow"
+                aria-label="linkedin"
+                title="linkedin"
               >
                 <a
                   href="https://www.linkedin.com/in/abhijith-pillai/"
@@ -128,6 +136,8 @@ export function Hero() {
                 variant="ghost"
                 size="icon"
                 className="hover:scale-110 transition-transform hover:shadow-glow"
+                aria-label="email"
+                title="email"
               >
                 <a href="mailto:abhijithp05@gmail.com?subject=Portfolio%20Inquiry&body=Hello%20Abhijith,">
                   <Mail className="h-5 w-5" />

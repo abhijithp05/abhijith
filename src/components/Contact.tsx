@@ -196,6 +196,8 @@ export default function Contact() {
                     variant="hero"
                     size="lg"
                     disabled={isSubmitting}
+                    aria-label="send-message"
+                    title="send-message"
                   >
                     {isSubmitting ? (
                       sendingText

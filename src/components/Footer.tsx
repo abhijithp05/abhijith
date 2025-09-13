@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import {
-  discussNewOpportunityLabel,
   emailId,
   footerLabel,
   getInTouchLabel,
@@ -28,6 +27,8 @@ export default function Footer() {
                   variant="ghost"
                   size="icon"
                   className="hover:scale-110 transition-transform hover:shadow-glow"
+                  aria-label="github"
+                  title="github"
                 >
                   <a
                     href="https://github.com/abhijithp05"
@@ -42,6 +43,8 @@ export default function Footer() {
                   variant="ghost"
                   size="icon"
                   className="hover:scale-110 transition-transform hover:shadow-glow"
+                  aria-label="linkedin"
+                  title="linkedin"
                 >
                   <a
                     href="https://www.linkedin.com/in/abhijith-pillai/"
@@ -55,6 +58,8 @@ export default function Footer() {
                   variant="ghost"
                   size="icon"
                   className="hover:scale-110 transition-transform hover:shadow-glow"
+                  aria-label="email"
+                  title="email"
                 >
                   <a href="mailto:abhijithp05@gmail.com?subject=Portfolio%20Inquiry&body=Hello%20Abhijith,">
                     <Mail className="h-5 w-5" />
@@ -76,6 +81,8 @@ export default function Footer() {
                         ?.scrollIntoView({ behavior: "smooth" })
                     }
                     className="block text-muted-foreground hover:text-foreground transition-smooth"
+                    aria-label={item.label}
+                    title={item.label}
                   >
                     {item.label}
                   </button>

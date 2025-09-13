@@ -109,18 +109,32 @@ export default function Projects() {
                   </div>
 
                   <div className="flex gap-3">
-                    <Button variant="default" size="sm" asChild>
+                    <Button
+                      variant="default"
+                      size="sm"
+                      asChild
+                      aria-label={`live-demo-${project.title}`}
+                      title={`live-demo-${project.title}`}
+                    >
                       <a
                         href={project.liveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
+                        aria-label={`live-demo-${project.title}`}
+                        title={`live-demo-${project.title}`}
                       >
                         <ExternalLink className="h-4 w-4" />
                         Live Demo
                       </a>
                     </Button>
                     {project.githubUrl && (
-                      <Button variant="outline" size="sm" asChild>
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        asChild
+                        aria-label={`code-${project.title}`}
+                        title={`code-${project.title}`}
+                      >
                         <a
                           href={project.githubUrl}
                           target="_blank"
