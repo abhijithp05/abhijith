@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/atoms/button";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { navigationTitle, navItems } from "@/constants/navigation.const";

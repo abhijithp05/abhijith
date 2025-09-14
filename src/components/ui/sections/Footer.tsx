@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/atoms/button";
 import {
   emailId,
   footerLabel,
@@ -10,6 +10,7 @@ import {
   quickLinksLabel,
 } from "@/constants/navigation.const";
 import { Github, Linkedin, Mail } from "lucide-react";
+import { SocialShare } from "../molecules/social-share";
 
 export default function Footer() {
   return (
@@ -21,51 +22,7 @@ export default function Footer() {
               <h3 className="text-xl font-bold text-foreground mb-4">
                 {letsConnectLabel}
               </h3>
-              <div className="flex gap-4">
-                <Button
-                  asChild
-                  variant="ghost"
-                  size="icon"
-                  className="hover:scale-110 transition-transform hover:shadow-glow h-12 w-12"
-                  aria-label="github"
-                  title="github"
-                >
-                  <a
-                    href="https://github.com/abhijithp05"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Github className="h-5 w-5" />
-                  </a>
-                </Button>
-                <Button
-                  asChild
-                  variant="ghost"
-                  size="icon"
-                  className="hover:scale-110 transition-transform hover:shadow-glow h-12 w-12"
-                  aria-label="linkedin"
-                  title="linkedin"
-                >
-                  <a
-                    href="https://www.linkedin.com/in/abhijith-pillai/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Linkedin className="h-5 w-5" />
-                  </a>
-                </Button>
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="hover:scale-110 transition-transform hover:shadow-glow h-12 w-12"
-                  aria-label="email"
-                  title="email"
-                >
-                  <a href="mailto:abhijithp05@gmail.com?subject=Portfolio%20Inquiry&body=Hello%20Abhijith,">
-                    <Mail className="h-5 w-5" />
-                  </a>
-                </Button>
-              </div>
+              <SocialShare />
             </div>
 
             <div>

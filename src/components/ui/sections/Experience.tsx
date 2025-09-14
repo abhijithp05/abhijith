@@ -1,5 +1,5 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { Card, CardContent } from "@/components/ui/atoms/card";
+import { Badge } from "@/components/ui/atoms/badge";
 import { CalendarDays, MapPin } from "lucide-react";
 
 export default function Experience() {

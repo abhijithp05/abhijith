@@ -1,5 +1,5 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { Card, CardContent } from "@/components/ui/atoms/card";
+import { Badge } from "@/components/ui/atoms/badge";
 import { Code2, Lightbulb, Users, Zap } from "lucide-react";
 
 export default function About() {

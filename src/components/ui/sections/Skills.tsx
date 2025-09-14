@@ -1,5 +1,5 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { Progress } from "@/components/ui/progress";
+import { Card, CardContent } from "@/components/ui/atoms/card";
+import { Progress } from "@/components/ui/molecules/progress";
 
 export default function Skills() {
   const skillCategories = [

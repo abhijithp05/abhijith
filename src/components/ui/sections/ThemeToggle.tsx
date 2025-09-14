@@ -1,13 +1,13 @@
 import { Sun, Moon, Waves, TreePine, Sunset } from "lucide-react";
 import { useTheme } from "next-themes";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/atoms/button";
 import { useEffect, useState } from "react";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+} from "@/components/ui/molecules/dropdown-menu";
 
 const themes = [
   { name: "light", label: "Light", icon: Sun },

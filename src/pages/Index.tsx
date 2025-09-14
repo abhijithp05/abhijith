@@ -1,14 +1,14 @@
 import { Suspense, lazy } from "react";
-import { Navigation } from "@/components/Navigation";
-import { Hero } from "@/components/Hero";
-import { ThemeToggle } from "@/components/ThemeToggle";
+import { Navigation } from "@/components/ui/sections/Navigation";
+import { Hero } from "@/components/ui/sections/Hero";
+import { ThemeToggle } from "@/components/ui/sections/ThemeToggle";
 
-const About = lazy(() => import("@/components/About"));
-const Contact = lazy(() => import("@/components/Contact"));
-const Footer = lazy(() => import("@/components/Footer"));
-const Skills = lazy(() => import("@/components/Skills"));
-const Experience = lazy(() => import("@/components/Experience"));
-const Projects = lazy(() => import("@/components/Projects"));
+const About = lazy(() => import("@/components/ui/sections/About"));
+const Contact = lazy(() => import("@/components/ui/sections/Contact"));
+const Footer = lazy(() => import("@/components/ui/sections/Footer"));
+const Skills = lazy(() => import("@/components/ui/sections/Skills"));
+const Experience = lazy(() => import("@/components/ui/sections/Experience"));
+const Projects = lazy(() => import("@/components/ui/sections/Projects"));
 
 const Index = () => {
   return (

@@ -1,6 +1,6 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
+import { Card, CardContent } from "@/components/ui/atoms/card";
+import { Button } from "@/components/ui/atoms/button";
+import { Badge } from "@/components/ui/atoms/badge";
 import { ExternalLink, Github } from "lucide-react";
 import {
   Coach,
