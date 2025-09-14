@@ -65,7 +65,11 @@ export default function Skills() {
                             {skill.level}%
                           </span>
                         </div>
-                        <Progress value={skill.level} className="h-2" />
+                        <Progress
+                          value={skill.level}
+                          className="h-2"
+                          aria-label={`${skill.name}-progress`}
+                        />
                       </div>
                     ))}
                   </div>

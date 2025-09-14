@@ -15,6 +15,7 @@ export const SocialShare = () => (
         href="https://github.com/abhijithp05"
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="github"
       >
         <Github className="h-5 w-5" />
       </a>
@@ -31,6 +32,7 @@ export const SocialShare = () => (
         href="https://www.linkedin.com/in/abhijith-pillai/"
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="linkedin"
       >
         <Linkedin className="h-5 w-5" />
       </a>
